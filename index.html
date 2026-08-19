@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  >
+
+  <meta
+    name="theme-color"
+    content="#fff5fb"
+  >
+
+  <meta
+    name="apple-mobile-web-app-capable"
+    content="yes"
+  >
+
+  <meta
+    name="apple-mobile-web-app-status-bar-style"
+    content="default"
+  >
+
+  <meta
+    name="description"
+    content="KIO-LOVE — Y2K Instagram Radar"
+  >
+
+  <title>KIO-LOVE</title>
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+</head>
+
+
+<body>
+
+  <!-- =======================================================
+       DECORATIONS GLOBALES
+       ======================================================= -->
+
+  <div
+    class="page-noise"
+    aria-hidden="true"
+  ></div>
+
+  <div
+    class="floating-sparkle sparkle-a"
+    aria-hidden="true"
+  >
+    ✦
+  </div>
+
+  <div
+    class="floating-sparkle sparkle-b"
+    aria-hidden="true"
+  >
+    ★
+  </div>
+
+
+  <!-- =======================================================
+       HEADER
+       ======================================================= -->
+
+  <header class="site-header">
+
+    <button
+      class="brand"
+      type="button"
+      data-view="radar"
+      aria-label="KIO-LOVE"
+    >
+      <span
+        class="brand-star"
+        aria-hidden="true"
+      >
+        ✦
+      </span>
+
+      <span class="brand-text">
+        KIO-LOVE
+      </span>
+    </button>
+
+
+    <div class="header-actions">
+
+      <button
+        id="menuBtn"
+        class="header-icon"
+        type="button"
+        aria-label="Ouvrir le menu"
+        aria-expanded="false"
+      >
+        ☰
+      </button>
+
+    </div>
+
+  </header>
+
+
+  <!-- =======================================================
+       MAIN
+       ======================================================= -->
+
+  <main class="site-main">
+
+
+    <!-- =====================================================
+         ONBOARDING / HERO
+         ===================================================== -->
+
+    <section
+      id="onboarding"
+      class="screen onboarding-screen"
+    >
+
+      <div class="hero-paper">
+
+        <div
+          class="hero-star hero-star-left"
+          aria-hidden="true"
+        >
+          ★
+        </div>
+
+
+        <div class="hero-copy">
+
+          <p class="tiny-label">
+            KIO WORLD / 2000
+          </p>
+
+
+          <h1 class="chrome-logo">
+            <span>KIO</span>
+            <span>LOVE</span>
+          </h1>
+
+
+          <div class="hero-tagline">
+
+            <p>
+              Y2K mood.
+            </p>
+
+            <p>
+              Pink signal.
+            </p>
+
+            <p class="pink-text">
+              Main character
+            </p>
+
+            <p>
+              energy.
+            </p>
+
+          </div>
+
+
+          <button
+            id="enterBtn"
+            class="main-cta"
+            type="button"
+          >
+            ENTER KIO
+            <span aria-hidden="true">
+              ✦
+            </span>
+          </button>
+
+
+          <p class="hero-micro">
+            Organise les profils que tu veux voir.
+            Garde tes favoris.
+            Reprends exactement où tu t'es arrêté.
+          </p>
+
+        </div>
+
+
+        <!--
+          AJOUTE PLUS TARD UNE IMAGE
+          DANS LE REPO SOUS LE NOM :
+
+          model-main.jpg
+        -->
+
+        <div
+          class="hero-model"
+          aria-label="KIO model"
+        >
+
+          <div
+            class="model-photo"
+            role="img"
+            aria-label="Modèle KIO-LOVE"
+          ></div>
+
+          <div
+            class="model-sticker sticker-heart"
+            aria-hidden="true"
+          >
+            KIO<br>4EVR
+          </div>
+
+          <div
+            class="model-sticker sticker-xoxo"
+            aria-hidden="true"
+          >
+            XOXO
+          </div>
+
+        </div>
+
+
+        <div
+          class="hero-side-label"
+          aria-hidden="true"
+        >
+          PINK SIGNAL
+        </div>
+
+
+        <div
+          class="hero-camera"
+          aria-hidden="true"
+        >
+          📷
+        </div>
+
+      </div>
+
+
+      <div class="hero-strip">
+
+        <span>
+          ✦ KIO-LOVE
+        </span>
+
+        <span>
+          Y2K FOREVER
+        </span>
+
+        <span>
+          PINK SIGNAL
+        </span>
+
+        <span>
+          MAIN CHARACTER
+        </span>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         RADAR
+         ===================================================== -->
+
+    <section
+      id="radar"
+      class="screen app-screen hidden"
+    >
+
+      <div class="section-intro">
+
+        <div>
+
+          <p class="tiny-label">
+            LIVE SCAN
+          </p>
+
+          <h2 class="section-title">
+            RADAR
+          </h2>
+
+        </div>
+
+
+        <div
+          class="progress-ring"
+          aria-label="Progression"
+        >
+          <span id="progressPercent">
+            0%
+          </span>
+        </div>
+
+      </div>
+
+
+
+      <!-- ===================================================
+           IMPORT
+           =================================================== -->
+
+      <section class="y2k-panel import-panel">
+
+        <div class="panel-top">
+
+          <div>
+
+            <span class="panel-kicker">
+              NEW SIGNAL
+            </span>
+
+            <h3>
+              Ajoute tes profils
+            </h3>
+
+          </div>
+
+          <span
+            class="blink-dot"
+            aria-hidden="true"
+          ></span>
+
+        </div>
+
+
+        <textarea
+          id="profileInput"
+          class="profile-input"
+          placeholder="@username
+instagram.com/username
+username2"
+          rows="5"
+          spellcheck="false"
+        ></textarea>
+
+
+        <div class="import-actions">
+
+          <button
+            id="addProfilesBtn"
+            class="primary-btn"
+            type="button"
+          >
+            ADD TO RADAR
+          </button>
+
+
+          <label class="secondary-btn file-button">
+
+            IMPORT TXT / CSV
+
+            <input
+              id="fileInput"
+              type="file"
+              accept=".txt,.csv,text/plain,text/csv"
+              hidden
+            >
+
+          </label>
+
+        </div>
+
+
+        <p class="panel-note">
+          Les doublons sont supprimés automatiquement.
+        </p>
+
+      </section>
+
+
+
+      <!-- ===================================================
+           SEARCH / SORT
+           =================================================== -->
+
+      <section class="radar-tools">
+
+        <div class="search-box">
+
+          <span
+            class="search-icon"
+            aria-hidden="true"
+          >
+            ⌕
+          </span>
+
+          <input
+            id="searchInput"
+            type="search"
+            placeholder="Search @username..."
+            autocomplete="off"
+          >
+
+          <button
+            id="clearSearchBtn"
+            class="clear-search"
+            type="button"
+            aria-label="Effacer la recherche"
+          >
+            ×
+          </button>
+
+        </div>
+
+
+        <select
+          id="sortSelect"
+          class="sort-select"
+          aria-label="Trier les profils"
+        >
+
+          <option value="recent">
+            NEWEST
+          </option>
+
+          <option value="alpha">
+            A → Z
+          </option>
+
+          <option value="unseen">
+            UNSEEN
+          </option>
+
+          <option value="favorites">
+            SAVED
+          </option>
+
+        </select>
+
+      </section>
+
+
+
+      <!-- ===================================================
+           RADAR GRID
+           =================================================== -->
+
+      <div
+        id="emptyRadar"
+        class="empty-state y2k-panel"
+      >
+
+        <div class="empty-star">
+          ✦
+        </div>
+
+        <p class="tiny-label">
+          NO SIGNAL
+        </p>
+
+        <h3>
+          Radar vide
+        </h3>
+
+        <p>
+          Ajoute ton premier profil Instagram
+          pour lancer le scan.
+        </p>
+
+      </div>
+
+
+      <div
+        id="profileGrid"
+        class="profile-grid"
+      ></div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         DETAIL
+         ===================================================== -->
+
+    <section
+      id="detail"
+      class="screen app-screen hidden"
+    >
+
+      <button
+        class="back-button"
+        type="button"
+        data-view="radar"
+      >
+        ← BACK
+      </button>
+
+
+      <div
+        id="detailCard"
+        class="detail-card"
+      ></div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         HISTORY
+         ===================================================== -->
+
+    <section
+      id="history"
+      class="screen app-screen hidden"
+    >
+
+      <div class="section-intro">
+
+        <div>
+
+          <p class="tiny-label">
+            ARCHIVE
+          </p>
+
+          <h2 class="section-title">
+            HISTORY
+          </h2>
+
+        </div>
+
+
+        <span
+          id="historyCount"
+          class="count-bubble"
+        >
+          0
+        </span>
+
+      </div>
+
+
+      <div
+        id="emptyHistory"
+        class="empty-state y2k-panel"
+      >
+
+        <div class="empty-star">
+          ◌
+        </div>
+
+        <h3>
+          Nothing here yet
+        </h3>
+
+        <p>
+          Les profils consultés apparaîtront ici.
+        </p>
+
+      </div>
+
+
+      <div
+        id="historyGrid"
+        class="profile-grid"
+      ></div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FAVORITES
+         ===================================================== -->
+
+    <section
+      id="favorites"
+      class="screen app-screen hidden"
+    >
+
+      <div class="section-intro">
+
+        <div>
+
+          <p class="tiny-label">
+            SAVED SIGNALS
+          </p>
+
+          <h2 class="section-title">
+            FAVORITES
+          </h2>
+
+        </div>
+
+
+        <span
+          id="favoriteCount"
+          class="count-bubble"
+        >
+          0
+        </span>
+
+      </div>
+
+
+      <div
+        id="emptyFavorites"
+        class="empty-state y2k-panel"
+      >
+
+        <div class="empty-star">
+          ♡
+        </div>
+
+        <h3>
+          No favorites
+        </h3>
+
+        <p>
+          Appuie sur l'étoile d'un profil
+          pour le garder ici.
+        </p>
+
+      </div>
+
+
+      <div
+        id="favoriteGrid"
+        class="profile-grid"
+      ></div>
+
+    </section>
+
+  </main>
+
+
+
+  <!-- =======================================================
+       BOTTOM NAV
+       ======================================================= -->
+
+  <nav
+    id="bottomNav"
+    class="bottom-nav hidden"
+    aria-label="Navigation principale"
+  >
+
+    <button
+      class="nav-item active"
+      type="button"
+      data-view="radar"
+    >
+      <span class="nav-icon">
+        ✦
+      </span>
+
+      <span class="nav-label">
+        RADAR
+      </span>
+    </button>
+
+
+    <button
+      class="nav-item"
+      type="button"
+      data-view="history"
+    >
+      <span class="nav-icon">
+        ◌
+      </span>
+
+      <span class="nav-label">
+        HISTORY
+      </span>
+    </button>
+
+
+    <button
+      class="nav-item"
+      type="button"
+      data-view="favorites"
+    >
+      <span class="nav-icon">
+        ★
+      </span>
+
+      <span class="nav-label">
+        SAVED
+      </span>
+    </button>
+
+  </nav>
+
+
+
+  <!-- =======================================================
+       SIDE MENU
+       ======================================================= -->
+
+  <div
+    id="sideMenu"
+    class="side-menu"
+    aria-hidden="true"
+  >
+
+    <div
+      id="menuBackdrop"
+      class="menu-backdrop"
+    ></div>
+
+
+    <aside class="menu-panel">
+
+      <div class="menu-heading">
+
+        <div>
+
+          <p class="tiny-label">
+            KIO WORLD
+          </p>
+
+          <h2>
+            CONTROL ROOM
+          </h2>
+
+        </div>
+
+
+        <button
+          id="closeMenu"
+          class="menu-close"
+          type="button"
+          aria-label="Fermer le menu"
+        >
+          ×
+        </button>
+
+      </div>
+
+
+      <div class="menu-card">
+
+        <span>
+          PROFILES
+        </span>
+
+        <strong id="menuProfiles">
+          0
+        </strong>
+
+      </div>
+
+
+      <div class="menu-card">
+
+        <span>
+          VIEWED
+        </span>
+
+        <strong id="menuViewed">
+          0
+        </strong>
+
+      </div>
+
+
+      <div class="menu-card">
+
+        <span>
+          SAVED
+        </span>
+
+        <strong id="menuSaved">
+          0
+        </strong>
+
+      </div>
+
+
+      <div class="menu-card">
+
+        <span>
+          UNSEEN
+        </span>
+
+        <strong id="menuUnseen">
+          0
+        </strong>
+
+      </div>
+
+
+
+      <button
+        id="undoBtn"
+        class="secondary-btn full-width"
+        type="button"
+      >
+        ↶ UNDO LAST ACTION
+      </button>
+
+
+
+      <button
+        id="exportBtn"
+        class="secondary-btn full-width"
+        type="button"
+      >
+        ⇩ EXPORT BACKUP
+      </button>
+
+
+
+      <label
+        class="secondary-btn full-width file-button"
+      >
+
+        ⇧ IMPORT BACKUP
+
+        <input
+          id="jsonFileInput"
+          type="file"
+          accept=".json,application/json"
+          hidden
+        >
+
+      </label>
+
+
+
+      <button
+        id="resetBtn"
+        class="danger-btn full-width"
+        type="button"
+      >
+        RESET LOCAL DATA
+      </button>
+
+
+      <p class="menu-footer-text">
+        KIO-LOVE n'effectue aucune action
+        automatiquement sur Instagram.
+      </p>
+
+    </aside>
+
+  </div>
+
+
+
+  <!-- =======================================================
+       TOAST
+       ======================================================= -->
+
+  <div
+    id="toast"
+    class="toast"
+    role="status"
+    aria-live="polite"
+  ></div>
+
+
+
+  <!-- =======================================================
+       JAVASCRIPT
+       ======================================================= -->
+
+  <script src="script.js"></script>
+
+</body>
+</html>

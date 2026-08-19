@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  >
+
+  <meta name="theme-color" content="#fff3fa">
+
+  <meta
+    name="description"
+    content="KIO-LOVE by 2boyzer"
+  >
+
+  <title>KIO-LOVE — by 2boyzer</title>
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+</head>
+
+<body>
+
+  <!-- =========================
+       DECORATION
+       ========================= -->
+
+  <div
+    id="floatingStickerLayer"
+    class="floating-sticker-layer"
+    aria-hidden="true"
+  ></div>
+
+
+  <!-- =========================
+       HEADER
+       ========================= -->
+
+  <header class="topbar">
+
+    <button
+      id="logoBtn"
+      class="logo-button"
+      type="button"
+      aria-label="Retour à l'accueil"
+    >
+      <img
+        src="logo-kio-love.png"
+        alt="KIO LOVE by 2boyzer"
+        class="logo-image"
+      >
+    </button>
+
+
+    <div class="topbar-actions">
+
+      <span
+        id="queueCount"
+        class="queue-count"
+      >
+        0
+      </span>
+
+      <button
+        id="menuBtn"
+        class="round-button"
+        type="button"
+        aria-label="Menu"
+      >
+        ☰
+      </button>
+
+    </div>
+
+  </header>
+
+
+  <main>
+
+
+    <!-- =========================
+         ACCUEIL
+         ========================= -->
+
+    <section
+      id="homeScreen"
+      class="screen home-screen"
+    >
+
+      <div class="hero-card">
+
+        <div class="hero-copy">
+
+          <p class="eyebrow">
+            KIO WORLD / Y2K
+          </p>
+
+          <h1>
+            FIND.
+            <span>SWIPE.</span>
+            CONNECT.
+          </h1>
+
+          <p class="hero-description">
+            Importe des profils Instagram,
+            puis parcours-les rapidement avec KIO.
+          </p>
+
+        </div>
+
+
+        <div class="hero-model">
+
+          <img
+            src="model-main.jpg"
+            alt="KIO model"
+          >
+
+        </div>
+
+
+        <span class="hero-star star-one">
+          ★
+        </span>
+
+        <span class="hero-star star-two">
+          ✦
+        </span>
+
+      </div>
+
+
+      <div class="start-options">
+
+        <p class="section-mini-title">
+          START YOUR RADAR
+        </p>
+
+
+        <!-- IMPORT PHOTO -->
+
+        <button
+          id="goImportBtn"
+          class="feature-button"
+          type="button"
+        >
+
+          <span class="feature-icon">
+            📸
+          </span>
+
+          <span class="feature-copy">
+
+            <strong>
+              IMPORT PHOTO
+            </strong>
+
+            <small>
+              Ajoute tes captures d'abonnements
+              pour extraire les @usernames.
+            </small>
+
+          </span>
+
+          <span class="feature-arrow">
+            ↗
+          </span>
+
+        </button>
+
+
+        <!-- AJOUT MANUEL -->
+
+        <button
+          id="manualToggleBtn"
+          class="feature-button"
+          type="button"
+        >
+
+          <span class="feature-icon">
+            @
+          </span>
+
+          <span class="feature-copy">
+
+            <strong>
+              ADD MANUALLY
+            </strong>
+
+            <small>
+              Colle plusieurs pseudos directement.
+            </small>
+
+          </span>
+
+          <span class="feature-arrow">
+            +
+          </span>
+
+        </button>
+
+
+        <div
+          id="manualPanel"
+          class="manual-panel hidden"
+        >
+
+          <textarea
+            id="manualInput"
+            placeholder="@username1
+@username2
+@username3"
+            spellcheck="false"
+            autocapitalize="none"
+          ></textarea>
+
+          <button
+            id="addManualBtn"
+            class="primary-button"
+            type="button"
+          >
+            ADD TO SWIPE ✦
+          </button>
+
+        </div>
+
+
+        <!-- FUTUR BACKEND -->
+
+        <div class="seed-search-card">
+
+          <span class="beta-chip">
+            BACKEND SOON
+          </span>
+
+          <h3>
+            Start from an account
+          </h3>
+
+
+          <div class="seed-input">
+
+            <span>
+              @
+            </span>
+
+            <input
+              id="seedInput"
+              type="text"
+              placeholder="username"
+              autocomplete="off"
+              autocapitalize="none"
+              spellcheck="false"
+            >
+
+          </div>
+
+
+          <button
+            id="startSeedBtn"
+            class="secondary-button"
+            type="button"
+          >
+            START FROM ACCOUNT
+          </button>
+
+
+          <p class="tiny-note">
+            Cette fonction sera connectée
+            au backend plus tard.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         IMPORT PHOTO
+         ========================= -->
+
+    <section
+      id="importScreen"
+      class="screen import-screen hidden"
+    >
+
+      <div class="screen-heading">
+
+        <button
+          class="back-button"
+          data-screen="homeScreen"
+          type="button"
+        >
+          ← BACK
+        </button>
+
+        <p class="eyebrow">
+          KIO VISION
+        </p>
+
+        <h2>
+          IMPORT
+          <span>PHOTO</span>
+        </h2>
+
+        <p>
+          Ajoute une ou plusieurs captures
+          de ta liste d'abonnements.
+        </p>
+
+      </div>
+
+
+      <label
+        for="photoInput"
+        class="photo-dropzone"
+        id="photoDropzone"
+      >
+
+        <span class="photo-drop-icon">
+          📸
+        </span>
+
+        <strong>
+          ADD SCREENSHOTS
+        </strong>
+
+        <small>
+          PNG / JPG / JPEG
+        </small>
+
+        <input
+          id="photoInput"
+          type="file"
+          accept="image/png,image/jpeg,image/jpg"
+          multiple
+          hidden
+        >
+
+      </label>
+
+
+      <div
+        id="photoPreviewList"
+        class="photo-preview-list"
+      ></div>
+
+
+      <div
+        id="analyseActions"
+        class="analyse-actions hidden"
+      >
+
+        <button
+          id="analysePhotosBtn"
+          class="primary-button"
+          type="button"
+        >
+          ✦ ANALYSE SCREENSHOTS
+        </button>
+
+        <button
+          id="clearPhotosBtn"
+          class="text-button"
+          type="button"
+        >
+          REMOVE ALL
+        </button>
+
+      </div>
+
+
+      <div
+        id="ocrLoading"
+        class="ocr-loading hidden"
+      >
+
+        <div class="scanner-visual">
+
+          <div class="scanner-line"></div>
+
+          <span>
+            KIO
+          </span>
+
+        </div>
+
+        <strong>
+          KIO IS READING...
+        </strong>
+
+        <p id="ocrProgressText">
+          Analyse des captures
+        </p>
+
+      </div>
+
+
+      <div
+        id="ocrResults"
+        class="ocr-results hidden"
+      >
+
+        <div class="result-heading">
+
+          <div>
+
+            <p class="eyebrow">
+              DETECTED SIGNALS
+            </p>
+
+            <h3>
+              <span id="detectedCount">
+                0
+              </span>
+              comptes trouvés
+            </h3>
+
+          </div>
+
+
+          <button
+            id="selectAllBtn"
+            class="mini-button"
+            type="button"
+          >
+            SELECT ALL
+          </button>
+
+        </div>
+
+
+        <p class="result-help">
+          Vérifie les pseudos avant de les ajouter.
+        </p>
+
+
+        <div
+          id="detectedUsernameList"
+          class="detected-list"
+        ></div>
+
+
+        <button
+          id="addDetectedBtn"
+          class="primary-button"
+          type="button"
+        >
+          ADD TO SWIPE
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         SWIPE
+         ========================= -->
+
+    <section
+      id="swipeScreen"
+      class="screen swipe-screen hidden"
+    >
+
+      <div class="swipe-heading">
+
+        <div>
+
+          <p class="eyebrow">
+            LIVE RADAR
+          </p>
+
+          <h2>
+            KIO
+            <span>SWIPE</span>
+          </h2>
+
+        </div>
+
+
+        <div class="profile-counter">
+
+          <strong id="currentNumber">
+            0
+          </strong>
+
+          <span>
+            /
+          </span>
+
+          <span id="totalNumber">
+            0
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <!-- GUIDE -->
+
+      <div
+        id="swipeGuide"
+        class="swipe-guide"
+      >
+
+        <div class="guide-side guide-pass">
+
+          <span class="guide-symbol">
+            ✕
+          </span>
+
+          <div>
+
+            <strong>
+              PASS
+            </strong>
+
+            <small>
+              swipe left
+            </small>
+
+          </div>
+
+        </div>
+
+
+        <div class="guide-middle">
+          ↔
+        </div>
+
+
+        <div class="guide-side guide-save">
+
+          <div>
+
+            <strong>
+              SAVE
+            </strong>
+
+            <small>
+              swipe right
+            </small>
+
+          </div>
+
+          <span class="guide-symbol">
+            ♥
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <!-- BARRES SWIPE -->
+
+      <div class="swipe-meter">
+
+        <div class="meter-side">
+
+          <span class="meter-label">
+            ✕ PASS
+          </span>
+
+          <div class="meter-track">
+
+            <div
+              id="passMeterFill"
+              class="meter-fill pass-meter-fill"
+            ></div>
+
+          </div>
+
+        </div>
+
+
+        <div class="meter-side">
+
+          <span class="meter-label meter-label-right">
+            SAVE ♥
+          </span>
+
+          <div class="meter-track">
+
+            <div
+              id="saveMeterFill"
+              class="meter-fill save-meter-fill"
+            ></div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- CARTES -->
+
+      <div
+        id="deck"
+        class="card-deck"
+      >
+
+        <div
+          id="emptyDeck"
+          class="empty-deck hidden"
+        >
+
+          <span class="empty-star">
+            ✦
+          </span>
+
+          <p class="eyebrow">
+            END OF QUEUE
+          </p>
+
+          <h3>
+            NO MORE SIGNALS
+          </h3>
+
+          <p>
+            Tu as parcouru tous les profils.
+          </p>
+
+          <button
+            id="emptyImportBtn"
+            class="primary-button"
+            type="button"
+          >
+            📸 IMPORT MORE
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <!-- BOUTONS -->
+
+      <div class="swipe-actions">
+
+        <button
+          id="passBtn"
+          class="action-button pass-action"
+          type="button"
+          aria-label="Passer"
+        >
+          ✕
+        </button>
+
+
+        <button
+          id="openInstagramBtn"
+          class="action-button instagram-action"
+          type="button"
+          aria-label="Instagram"
+        >
+          IG
+        </button>
+
+
+        <button
+          id="saveBtn"
+          class="action-button save-action"
+          type="button"
+          aria-label="Sauvegarder"
+        >
+          ♥
+        </button>
+
+      </div>
+
+
+      <div class="swipe-caption">
+
+        <span>
+          ← PASS
+        </span>
+
+        <span>
+          OPEN IG
+        </span>
+
+        <span>
+          SAVE →
+        </span>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         SAVED
+         ========================= -->
+
+    <section
+      id="savedScreen"
+      class="screen library-screen hidden"
+    >
+
+      <div class="library-heading">
+
+        <div>
+
+          <p class="eyebrow">
+            YOUR PICKS
+          </p>
+
+          <h2>
+            SAVED
+          </h2>
+
+        </div>
+
+        <span
+          id="savedCount"
+          class="library-count"
+        >
+          0
+        </span>
+
+      </div>
+
+
+      <div
+        id="savedGrid"
+        class="profile-grid"
+      ></div>
+
+
+      <div
+        id="emptySaved"
+        class="empty-library"
+      >
+
+        <span>
+          ♥
+        </span>
+
+        <h3>
+          Nothing saved yet
+        </h3>
+
+        <p>
+          Swipe à droite pour sauvegarder.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         HISTORY
+         ========================= -->
+
+    <section
+      id="historyScreen"
+      class="screen library-screen hidden"
+    >
+
+      <div class="library-heading">
+
+        <div>
+
+          <p class="eyebrow">
+            ALREADY SEEN
+          </p>
+
+          <h2>
+            HISTORY
+          </h2>
+
+        </div>
+
+        <span
+          id="historyCount"
+          class="library-count"
+        >
+          0
+        </span>
+
+      </div>
+
+
+      <div
+        id="historyGrid"
+        class="profile-grid"
+      ></div>
+
+
+      <div
+        id="emptyHistory"
+        class="empty-library"
+      >
+
+        <span>
+          ◌
+        </span>
+
+        <h3>
+          No history yet
+        </h3>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       NAV BAS
+       ========================= -->
+
+  <nav
+    id="bottomNav"
+    class="bottom-nav hidden"
+  >
+
+    <button
+      class="nav-button active"
+      data-screen="swipeScreen"
+      type="button"
+    >
+      <span>
+        ↔
+      </span>
+
+      <small>
+        SWIPE
+      </small>
+    </button>
+
+
+    <button
+      class="nav-button"
+      data-screen="importScreen"
+      type="button"
+    >
+      <span>
+        📸
+      </span>
+
+      <small>
+        IMPORT
+      </small>
+    </button>
+
+
+    <button
+      class="nav-button"
+      data-screen="savedScreen"
+      type="button"
+    >
+      <span>
+        ♥
+      </span>
+
+      <small>
+        SAVED
+      </small>
+    </button>
+
+
+    <button
+      class="nav-button"
+      data-screen="historyScreen"
+      type="button"
+    >
+      <span>
+        ◌
+      </span>
+
+      <small>
+        HISTORY
+      </small>
+    </button>
+
+  </nav>
+
+
+  <!-- =========================
+       MENU
+       ========================= -->
+
+  <div
+    id="sideMenu"
+    class="side-menu"
+  >
+
+    <div
+      id="menuBackdrop"
+      class="menu-backdrop"
+    ></div>
+
+
+    <aside class="menu-panel">
+
+      <div class="menu-heading">
+
+        <div>
+
+          <p class="eyebrow">
+            KIO WORLD
+          </p>
+
+          <h2>
+            CONTROL
+            <br>
+            ROOM
+          </h2>
+
+          <p class="menu-byline">
+            by 2boyzer
+          </p>
+
+        </div>
+
+
+        <button
+          id="closeMenuBtn"
+          class="round-button"
+          type="button"
+        >
+          ×
+        </button>
+
+      </div>
+
+
+      <div class="menu-stats">
+
+        <div class="stat-card">
+          <span>TOTAL</span>
+          <strong id="statTotal">0</strong>
+        </div>
+
+        <div class="stat-card">
+          <span>SEEN</span>
+          <strong id="statSeen">0</strong>
+        </div>
+
+        <div class="stat-card">
+          <span>SAVED</span>
+          <strong id="statSaved">0</strong>
+        </div>
+
+        <div class="stat-card">
+          <span>LEFT</span>
+          <strong id="statLeft">0</strong>
+        </div>
+
+      </div>
+
+
+      <button
+        id="menuImportBtn"
+        class="menu-action"
+        type="button"
+      >
+        📸 IMPORT SCREENSHOTS
+      </button>
+
+
+      <button
+        id="menuNewScanBtn"
+        class="menu-action"
+        type="button"
+      >
+        ✦ ADD MORE PROFILES
+      </button>
+
+
+      <button
+        id="menuSavedBtn"
+        class="menu-action"
+        type="button"
+      >
+        ♥ OPEN SAVED
+      </button>
+
+
+      <button
+        id="menuHistoryBtn"
+        class="menu-action"
+        type="button"
+      >
+        ◌ OPEN HISTORY
+      </button>
+
+
+      <button
+        id="clearHistoryBtn"
+        class="menu-action"
+        type="button"
+      >
+        CLEAR HISTORY
+      </button>
+
+
+      <button
+        id="resetBtn"
+        class="menu-action danger"
+        type="button"
+      >
+        RESET LOCAL DATA
+      </button>
+
+
+      <p class="menu-note">
+        KIO organise les profils.
+        Les actions Instagram restent manuelles.
+      </p>
+
+    </aside>
+
+  </div>
+
+
+  <!-- =========================
+       TUTORIEL SWIPE
+       ========================= -->
+
+  <div
+    id="swipeTutorial"
+    class="swipe-tutorial hidden"
+  >
+
+    <div class="tutorial-backdrop"></div>
+
+
+    <div class="tutorial-card">
+
+      <span class="tutorial-star">
+        ✦
+      </span>
+
+      <p class="eyebrow">
+        HOW TO KIO
+      </p>
+
+      <h2>
+        SWIPE IT
+      </h2>
+
+
+      <div class="tutorial-demo">
+
+        <div class="tutorial-pass">
+          ✕
+          <small>
+            PASS
+          </small>
+        </div>
+
+
+        <div class="tutorial-phone">
+
+          <div class="tutorial-profile">
+            @username
+          </div>
+
+          <span class="tutorial-finger">
+            ☝
+          </span>
+
+        </div>
+
+
+        <div class="tutorial-save">
+          ♥
+          <small>
+            SAVE
+          </small>
+        </div>
+
+      </div>
+
+
+      <p>
+        Glisse à gauche pour passer.
+        Glisse à droite pour sauvegarder.
+      </p>
+
+
+      <button
+        id="closeTutorialBtn"
+        class="primary-button"
+        type="button"
+      >
+        GOT IT ✦
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================
+       TOAST
+       ========================= -->
+
+  <div
+    id="toast"
+    class="toast"
+    role="status"
+    aria-live="polite"
+  ></div>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>

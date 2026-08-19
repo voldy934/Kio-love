@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#090611" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <title>KIO RADAR — by 2Boyzer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="ambient ambient-a"></div>
+  <div class="ambient ambient-b"></div>
+  <div class="grain"></div>
+
+  <header class="topbar">
+    <button class="brand" data-view="radar" aria-label="KIO RADAR">
+      <span class="brand-mark">K</span>
+      <span>
+        <strong>KIO RADAR</strong>
+        <small>by 2Boyzer</small>
+      </span>
+    </button>
+    <button id="menuBtn" class="icon-btn" aria-label="Ouvrir le menu">☰</button>
+  </header>
+
+  <main>
+    <section id="onboarding" class="screen onboarding">
+      <div class="hero-orbit">
+        <div class="orbit orbit-1"></div>
+        <div class="orbit orbit-2"></div>
+        <div class="orbit-core">KIO</div>
+      </div>
+      <p class="eyebrow">STORY RADAR / 01</p>
+      <h1>Find the stories.<br><span>Feel the signal.</span></h1>
+      <p class="hero-copy">Un radar visuel pour organiser les profils que tu veux regarder, suivre ta progression et reprendre exactement où tu t'es arrêté.</p>
+      <button id="enterBtn" class="primary-btn">ENTER RADAR <span>↗</span></button>
+      <p class="micro">Tout reste enregistré sur cet appareil.</p>
+    </section>
+
+    <section id="radar" class="screen app-screen hidden">
+      <div class="page-head">
+        <div>
+          <p class="eyebrow">LIVE SCAN</p>
+          <h2>Radar</h2>
+        </div>
+        <div class="progress-ring"><span id="progressPercent">0%</span></div>
+      </div>
+
+      <div class="import-card glass">
+        <div class="card-title">
+          <div>
+            <span class="kicker">IMPORT</span>
+            <h3>Ajoute tes profils</h3>
+          </div>
+          <span class="pulse-dot"></span>
+        </div>
+        <textarea id="profileInput" placeholder="@username&#10;https://instagram.com/username&#10;username2"></textarea>
+        <div class="row">
+          <button id="addProfilesBtn" class="primary-btn small">ADD TO RADAR</button>
+          <label class="secondary-btn small file-btn">
+            IMPORT TXT/CSV
+            <input id="fileInput" type="file" accept=".txt,.csv,text/plain,text/csv" />
+          </label>
+        </div>
+        <p class="hint">Doublons supprimés automatiquement.</p>
+      </div>
+
+      <div class="toolbar">
+        <div class="search-wrap">
+          <span>⌕</span>
+          <input id="searchInput" type="search" placeholder="Search profiles..." />
+        </div>
+        <button id="filterBtn" class="secondary-btn small">ALL</button>
+      </div>
+
+      <div id="emptyRadar" class="empty-state glass">
+        <div class="empty-art">✦</div>
+        <h3>Radar vide</h3>
+        <p>Ajoute des @username pour créer ta première session.</p>
+      </div>
+
+      <div id="profileGrid" class="profile-grid"></div>
+    </section>
+
+    <section id="detail" class="screen app-screen hidden">
+      <button class="back-btn" data-view="radar">← BACK</button>
+      <div id="detailCard" class="detail-card"></div>
+    </section>
+
+    <section id="history" class="screen app-screen hidden">
+      <div class="page-head">
+        <div>
+          <p class="eyebrow">ARCHIVE</p>
+          <h2>History</h2>
+        </div>
+        <span id="historyCount" class="count-pill">0</span>
+      </div>
+      <div id="historyGrid" class="profile-grid"></div>
+      <div id="emptyHistory" class="empty-state glass">
+        <div class="empty-art">◌</div>
+        <h3>No history yet</h3>
+        <p>Les profils vus seront déplacés ici.</p>
+      </div>
+    </section>
+
+    <section id="favorites" class="screen app-screen hidden">
+      <div class="page-head">
+        <div>
+          <p class="eyebrow">SAVED SIGNALS</p>
+          <h2>Favorites</h2>
+        </div>
+        <span id="favoriteCount" class="count-pill">0</span>
+      </div>
+      <div id="favoriteGrid" class="profile-grid"></div>
+      <div id="emptyFavorites" class="empty-state glass">
+        <div class="empty-art">★</div>
+        <h3>No favorites yet</h3>
+        <p>Ajoute une étoile aux profils que tu veux retrouver.</p>
+      </div>
+    </section>
+  </main>
+
+  <nav id="bottomNav" class="bottom-nav hidden">
+    <button class="nav-item active" data-view="radar"><span>◉</span><small>Radar</small></button>
+    <button class="nav-item" data-view="history"><span>◌</span><small>History</small></button>
+    <button class="nav-item" data-view="favorites"><span>★</span><small>Saved</small></button>
+  </nav>
+
+  <div id="sideMenu" class="side-menu">
+    <div class="menu-backdrop" id="menuBackdrop"></div>
+    <aside class="menu-panel">
+      <button id="closeMenu" class="icon-btn close">×</button>
+      <p class="eyebrow">KIO RADAR</p>
+      <h2>Control room</h2>
+      <div class="menu-stat"><span>Profiles</span><strong id="menuProfiles">0</strong></div>
+      <div class="menu-stat"><span>Viewed</span><strong id="menuViewed">0</strong></div>
+      <div class="menu-stat"><span>Saved</span><strong id="menuSaved">0</strong></div>
+      <button id="undoBtn" class="secondary-btn full">UNDO LAST VIEW</button>
+      <button id="resetBtn" class="danger-btn full">RESET LOCAL DATA</button>
+      <p class="menu-note">Manual likes only. KIO RADAR never performs likes automatically.</p>
+    </aside>
+  </div>
+
+  <div id="toast" class="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>
